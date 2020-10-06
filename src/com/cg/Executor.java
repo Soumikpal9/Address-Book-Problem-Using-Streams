@@ -43,6 +43,7 @@ public class Executor {
 	}
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
+		AddressBook addBook = new AddressBook();
 		List<AddressBook> book = new ArrayList<AddressBook>();
 		Executor entDet = new Executor();
 		int a = 5;
@@ -53,12 +54,13 @@ public class Executor {
 		System.out.println("Welome to Address Book!!!");
 		
 		do {
+			System.out.println("Press 6 to search for Contacts by City");
+			System.out.println("Press 7 to search for Contacts by State");
 			System.out.println("Press 8 to add Address Book");
 			System.out.println("Press 9 to exit");
 			check = in.nextInt();
 			
 			if(check == 8) {
-				AddressBook addBook = new AddressBook();
 				book.add(addBook);
 				do {
 					
@@ -119,6 +121,19 @@ public class Executor {
 			
 				}while(a!=5);
 			}
+			
+			else if(check == 6) {
+				System.out.println("Enter the city : ");
+				String city2 = in.nextLine();
+				System.out.println(addBook.searchContactByCity(city2));
+			}
+			
+			else if(check == 7) {
+				System.out.println("Enter the state : ");
+				String state2 = in.nextLine();
+				System.out.println(addBook.searchContactByState(state2));
+			}
+			
 		}while(check!=9);
 	}
 }
