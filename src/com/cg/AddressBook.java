@@ -27,6 +27,7 @@ public class AddressBook {
 				addBook.remove(i);
 				addBook.add(contact);
 				count++;
+				break;
 			}
 		}
 		if(count == 0) {
@@ -35,5 +36,16 @@ public class AddressBook {
 		else {
 			return "Contact udated successfully";
 		}
+	}
+	
+	public boolean removeContact(String firstName) {
+		ContactDetails contact = new ContactDetails("","","","","","","","");
+		for(ContactDetails i : addBook) {
+			if(i.firstName.equals(firstName)) {
+				contact = i;
+				break;
+			}
+		}
+		return addBook.remove(contact);
 	}
 }
