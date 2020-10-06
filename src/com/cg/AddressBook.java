@@ -1,5 +1,6 @@
 package com.cg;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class AddressBook {
 	private List<ContactDetails> addBook = new ArrayList<>();
@@ -47,5 +48,13 @@ public class AddressBook {
 			}
 		}
 		return addBook.remove(contact);
+	}
+	
+	public List<ContactDetails> searchContactByCity(String city) {
+		return addBook.stream().filter(n -> n.city.equals(city)).collect(Collectors.toList());
+	}
+	
+	public List<ContactDetails> searchContactByState(String state) {
+		return addBook.stream().filter(n -> n.state.equals(state)).collect(Collectors.toList());
 	}
 }
