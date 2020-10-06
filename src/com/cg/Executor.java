@@ -1,6 +1,6 @@
 package com.cg;
 import java.util.*;
-//UC2
+//UC5
 public class Executor {
 	Scanner sc = new Scanner(System.in);
 	static String firstName, lastName, address, city, state, zipcode, phone, email;
@@ -46,6 +46,7 @@ public class Executor {
 		AddressBook addBook = new AddressBook();
 		Executor entDet = new Executor();
 		int a = 5;
+		int count = 0;
 		
 		System.out.println("Welome to Address Book!!!");
 		
@@ -56,6 +57,7 @@ public class Executor {
 			switch(a) {
 			case 1:
 				entDet.addDetails();
+				count++;
 				ContactDetailsRegex validateDetails = new ContactDetailsRegex();
 				if(validateDetails.FirstNameValidation(firstName) && validateDetails.LastNameValidation(lastName) && validateDetails.AddressValidation(address) && validateDetails.CityValidation(city) && validateDetails.StateValidation(state) && validateDetails.ZipcodeValidation(zipcode) && validateDetails.PhoneValidation(phone) && validateDetails.EmailValidation(email)) {
 					ContactDetails contact = new ContactDetails(firstName, lastName, address, city, state, zipcode, phone, email);
