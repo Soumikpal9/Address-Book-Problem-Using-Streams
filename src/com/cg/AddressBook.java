@@ -19,4 +19,21 @@ public class AddressBook {
 	public List<ContactDetails> showContact(){
 		return addBook;
 	}
+	
+	public String updateContact(ContactDetails contact) {
+		int count = 0;
+		for(ContactDetails i : addBook) {
+			if(i.firstName.equals(contact.firstName)) {
+				addBook.remove(i);
+				addBook.add(contact);
+				count++;
+			}
+		}
+		if(count == 0) {
+			return "No such contact present in the Address Book";
+		}
+		else {
+			return "Contact udated successfully";
+		}
+	}
 }
