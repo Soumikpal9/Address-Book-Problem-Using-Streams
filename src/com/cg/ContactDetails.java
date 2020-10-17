@@ -10,6 +10,10 @@ public class ContactDetails {
 	public String phone;
 	public String email;
 	
+	public ContactDetails() {
+		
+	}
+	
 	public ContactDetails(String firstName, String lastName, String address, String city, String state, String zipcode, String phone, String email) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -23,6 +27,7 @@ public class ContactDetails {
 	
 	@Override
 	public String toString() {
-		return "First Name: "+firstName+"\nLast Name: "+lastName+"\nAddress: "+address+"\nCity: "+city+"\nState: "+state+"\nZip: "+zipcode+"\nPhone Number: "+phone+"\nEmail: "+email;
+		return "FirstName : " + firstName + " LastName : " + lastName + " Address : " + address + " City : " + city
+				+ " State : " + state + " Zip : " + zipcode + " Phone No : " + phone + " Email : " + email;
 	}
 }
